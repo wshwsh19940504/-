@@ -6,6 +6,7 @@ import store from './store'
 import axios from 'axios'
 import 'amfe-flexible'
 import setaxios from './setaxios'
+//因为是暴露了一个方法，所以执行一下
 setaxios()
 Vue.config.productionTip = false
 Vue.prototype.$http=axios

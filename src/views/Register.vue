@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img class="headerimg" src="https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/bannner/1901/learn.png" alt="">
+        <img class="headerimg" src="https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/6edc59658a9ee8967f2052413d4554c0_254_96.jpg" alt="">
        <cube-form
             :model="model"
             :schema="schema"
