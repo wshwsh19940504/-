@@ -31,6 +31,39 @@ export default new Router({
       path: '/index',
       name: 'index',
       component: () => import( './views/index.vue')
+    },
+    {
+      path: '/botnav',
+      name: 'botnav',
+      component: () => import( './views/botnav.vue'),
+      children:[
+        //二级路由里面不需要加/
+        {
+          path: 'index',
+          name: 'index',
+          component: () => import( './views/index.vue')
+        },
+        {
+          path: 'list',
+          name: 'list',
+          component: () => import( './views/List.vue')
+        },
+        {
+          path: 'search',
+          name: 'search',
+          component: () => import( './views/Search.vue')
+        },
+        {
+          path: 'mine',
+          name: 'mine',
+          component: () => import( './views/Mine.vue')
+        },
+        {
+          path: 'cart',
+          name: 'cart',
+          component: () => import( './views/Cart.vue')
+        }
+      ]
     }
   ]
 })

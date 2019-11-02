@@ -74,6 +74,8 @@ export default {
                 if(result.code=='0'){
                     this.$store.commit('settoken',result.token)
                     window.localStorage.setItem('token',result.token)
+                    //编程路由，登陆成功了跳转
+                    this.$router.replace({path:'/botnav/index'})
                 }else{
                      alert(result.message)
                 }
