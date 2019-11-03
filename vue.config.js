@@ -1,5 +1,4 @@
 module.exports = {
-  baseUrl: './',
   configureWebpack:{
       devServer:{
         //MOCK接口编写的地方
