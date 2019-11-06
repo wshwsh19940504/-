@@ -6,7 +6,7 @@ import Login from './views/Login.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
     {
@@ -51,16 +51,25 @@ export default new Router({
         {
           path: 'search',
           name: 'search',
+          meta:{
+            requireAuth:true//需要登陆权限才会展示
+          },
           component: () => import( './views/Search.vue')
         },
         {
           path: 'mine',
           name: 'mine',
+          meta:{
+            requireAuth:true//需要登陆权限才会展示
+          },
           component: () => import( './views/Mine.vue')
         },
         {
           path: 'cart',
           name: 'cart',
+          meta:{
+            requireAuth:true//需要登陆权限才会展示
+          },
           component: () => import( './views/Cart.vue')
         }
       ]

@@ -73,9 +73,17 @@ export default {
                 const result=await this.$http.get('/api/login',{params:this.model})
                 if(result.code=='0'){
                     this.$store.commit('settoken',result.token)
+                    console.log(this.$route)
                     window.localStorage.setItem('token',result.token)
-                    //编程路由，登陆成功了跳转
-                    this.$router.replace({path:'/botnav/index'})
+                 
+                
+                    //判断路由是否带参，带参就去参数地址，否则就去首页
+                    if(this.$route.query.redirect){
+                            this.$router.replace({path:this.$route.query.redirect})
+                    }else{
+                     //编程路由，登陆成功了跳转
+                     this.$router.replace({path:'/botnav/index'})
+                    }
                 }else{
                      alert(result.message)
                 }
